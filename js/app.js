@@ -1,17 +1,25 @@
 angular
   .module("rapidex", [
-    "ui.router"
+    "ui.router",
+    "ngResource"
   ])
   .config([
     "$stateProvider",
     RouterFunction
   ])
+  .factory("PokemonFactory", [
+    "$resource",
+    PokemonFactoryFunction
+  ])
   .controller("PokeIndexController", [
+    "PokemonFactory",
     PokeIndexControllerFunction
   ])
   .controller("PokeShowController", [
+    "PokemonFactory",
     PokeShowControllerFunction
   ])
+
 
   function RouterFunction($stateProvider) {
     $stateProvider
@@ -29,10 +37,15 @@ angular
     })
   }
 
-  function PokeIndexControllerFunction() {
-    console.log("i'm in your index");
+  function PokemonFactoryFunction($resource) {
+    return $resource("http://localhost:3001/api/pokemon/:id")
   }
 
-  function PokeShowControllerFunction() {
-    console.log("I'm in your show ");
+  function PokeIndexControllerFunction(PokemonFactory) {
+    this.someShit = "YEAH"
+    this.pokemon = PokemonFactory.query()
+  }
+
+  function PokeShowControllerFunction(PokemonFactory) {
+
   }
