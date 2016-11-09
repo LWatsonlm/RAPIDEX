@@ -42,7 +42,6 @@ angular
   }
 
   function PokeIndexControllerFunction(PokemonFactory) {
-    this.someShit = "YEAH"
     this.pokemon = PokemonFactory.query()
   }
 

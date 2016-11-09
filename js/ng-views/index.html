@@ -1,9 +1,10 @@
 <h1>Check out these Pokemon</h1>
-{{vm.someShit}}
-{{vm.pokemon}}
-<div class="poke">
-  <img src="" alt="">
-  <div class="poke-number"></div>
-  <div class="poke-name"></div>
-  <div class="poke-type"></div>
+
+<div class="poke" ng-repeat="poke in vm.pokemon | orderBy: 'id'">
+  <img ng-src="{{poke.sprites.front_default}}" alt="{{poke.name}}">
+  <div class="poke-number">{{poke.id}}</div>
+  <div class="poke-name">{{poke.name}}</div>
+  <div class="poke-type">
+    <span class="{{type.type.name}}" ng-repeat="type in poke.types">{{type.type.name}} </span>
+  </div>
 </div>
