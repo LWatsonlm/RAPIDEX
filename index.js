@@ -13,8 +13,13 @@ app.listen(app.get("port"), function(){
 });
 
 app.get("/api/pokemon", (req, res) => {
-  console.log("trying to show you some siiiick pokes");
   Pokemon.find({}).then(pokemons => {
     res.json(pokemons)
+  })
+})
+
+app.get("/api/pokemon/:id", (req, res) => {
+  Pokemon.findOne({id: req.params.id}).then(pokemon => {
+    res.json(pokemon)
   })
 })
