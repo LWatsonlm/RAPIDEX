@@ -16,7 +16,7 @@ app.listen(app.get("port"), function(){
 });
 
 app.get("/", (req, res) => {
-  res.redirect("http://localhost:3001/index.html")
+  res.sendFile(__dirname + "/index.html")
 })
 
 app.get("/api/pokemon", (req, res) => {

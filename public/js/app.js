@@ -26,13 +26,13 @@ angular
     $stateProvider
     .state("pokeIndex", {
       url: "/",
-      templateUrl: "js/ng-views/index.html",
+      templateUrl: "/assets/js/ng-views/index.html",
       controller: "PokeIndexController",
       controllerAs: "vm"
     })
     .state("pokeShow", {
       url: "/pokemon/:id",
-      templateUrl: "js/ng-views/show.html",
+      templateUrl: "/assets/js/ng-views/show.html",
       controller: "PokeShowController",
       controllerAs: "vm"
     })
