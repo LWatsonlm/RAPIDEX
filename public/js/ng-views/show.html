@@ -3,7 +3,7 @@
 <h2>Pokedex Data:</h2>
 <div class="poke-stat">
   {{vm.pokemon.stats}}
-  <p ng-repeat="stat in vm.pokemon.stats">{{stat}}</p>
+  <p ng-repeat="stat in vm.pokemon.stats">{{stat.stat.name}}: {{stat.base_stat}}</p>
 </div>
 
 <!-- <h1>Bulbasaur</h1>

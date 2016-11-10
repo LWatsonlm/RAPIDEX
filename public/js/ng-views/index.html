@@ -1,6 +1,6 @@
 <h1>Check out these Pokemon</h1>
-
-<div class="poke" ng-repeat="poke in vm.pokemon | orderBy: 'id'">
+<input type="text" ng-model="searchTerm" placeholder="Search the Pokedex"/>
+<div class="poke" ng-repeat="poke in vm.pokemon | orderBy: 'id' | filter:searchTerm">
   <img ng-src="{{poke.sprites.front_default}}" alt="{{poke.name}}">
   <div class="poke-number">{{poke.id}}</div>
   <a data-ui-sref="pokeShow({id: poke.id})"><div class="poke-name">{{poke.name}}</div></a>
