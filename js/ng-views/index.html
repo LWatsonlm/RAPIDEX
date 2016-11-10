@@ -3,7 +3,7 @@
 <div class="poke" ng-repeat="poke in vm.pokemon | orderBy: 'id'">
   <img ng-src="{{poke.sprites.front_default}}" alt="{{poke.name}}">
   <div class="poke-number">{{poke.id}}</div>
-  <div class="poke-name">{{poke.name}}</div>
+  <a data-ui-sref="pokeShow({id: poke.id})"><div class="poke-name">{{poke.name}}</div></a>
   <div class="poke-type">
     <span class="{{type.type.name}}" ng-repeat="type in poke.types">{{type.type.name}} </span>
   </div>

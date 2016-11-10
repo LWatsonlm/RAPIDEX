@@ -1,4 +1,12 @@
-<h1>Bulbasaur</h1>
+<h1>{{vm.pokemon.name}}</h1>
+<img ng-src="{{vm.pokemon.sprites.front_default}}" alt="{{vm.pokemon.name}}">
+<h2>Pokedex Data:</h2>
+<div class="poke-stat">
+  {{vm.pokemon.stats}}
+  <p ng-repeat="stat in vm.pokemon.stats">{{stat}}</p>
+</div>
+
+<!-- <h1>Bulbasaur</h1>
 <h2>Pokedex Data</h2>
 <table>
   <tr>
@@ -21,4 +29,4 @@
     <th>Abilities</th>
     <td>chlorophyll, overgrow</td>
   </tr>
-</table>
+</table> -->

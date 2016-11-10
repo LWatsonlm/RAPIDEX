@@ -16,6 +16,7 @@ angular
     PokeIndexControllerFunction
   ])
   .controller("PokeShowController", [
+    "$stateParams",
     "PokemonFactory",
     PokeShowControllerFunction
   ])
@@ -45,6 +46,6 @@ angular
     this.pokemon = PokemonFactory.query()
   }
 
-  function PokeShowControllerFunction(PokemonFactory) {
-
+  function PokeShowControllerFunction($stateParams, PokemonFactory) {
+    this.pokemon = PokemonFactory.get({id: $stateParams.id})
   }
