@@ -25,47 +25,74 @@ h3 {
   padding: 3px;
 }
 
+span {
+  font-weight: bold;
+}
+
 .poison {
   color: #A040A0;
-  font-weight: bold;
 }
 
 .grass {
   color: #73BD64;
-  font-weight: bold;
 }
 
 .fire {
   color: #E72300;
-  font-weight: bold;
 }
 
 .bug {
   color: #4C963D;
-  font-weight: bold;
 }
 
 .flying {
   color: #B49DF7;
-  font-weight: bold;
 }
 
 .water {
   color: #80C6DD;
-  font-weight: bold;
 }
 
 .normal {
   color: #B8B8B8;
-  font-weight: bold;
 }
 
 .ground {
   color: #795902;
-  font-weight: bold;
 }
 
 .fairy {
   color: #E59FE4;
-  font-weight: bold;
+}
+
+.electric {
+  color: #FEEC18;
+}
+
+.rock {
+  color: #CDBF6D;
+}
+
+.fighting {
+  color: #B24C3C;
+}
+
+.ghost {
+  color: #8066D6;
+}
+
+.steel {
+  color: #C6C0DC;
+}
+
+.dark {
+  color: #936753;
+}
+
+.ice {
+  color: #7CF5FF;
+}
+
+.psychic {
+  color: #FF35B2;
 }
