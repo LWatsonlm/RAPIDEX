@@ -6,7 +6,7 @@ var P = new Pokedex()
 var pokemon = []
 
 Pokemon.remove({}).then(_ => {
-  for (let i = 1; i < 151; i++) {
+  for (let i = 1; i < 25; i++) {
     P.getPokemonByName(i)
     .then(res => {
       console.log(res);

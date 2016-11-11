@@ -1,4 +1,3 @@
-console.log(seeds.length);
 
 Vue.component("pokemon", {
   props: ['pokemon'], //  data is passing down to child components using props
@@ -6,11 +5,26 @@ Vue.component("pokemon", {
 })
 
 const Index = {
-  // template: '<div class="pokemonIndex">HEY HELLO</pokemon></div>',
   template: '<div class="pokemonIndex"><h2>CHECK THESE POKéS</h2><pokemon v-for="poke in orderedPokemon" :pokemon="poke" :key="poke.id"></pokemon></div>',
+
   data: function(){
-    return {pokemon: seeds}
+    return {pokemon: []}
   },
+
+  mounted: function(){
+    var resource = this.$resource('/api/pokemon{/id}');
+    this.fetchPokemon(resource)
+  },
+
+  methods: {
+    fetchPokemon: function(resource) {
+      resource.get().then(function(pokemon) {
+        console.log(pokemon.body);
+        this.$set(this, 'pokemon', pokemon.body)
+      });
+    }
+  },
+
   computed: {
     orderedPokemon: function() {
       return this.pokemon.sort((a, b) => {
