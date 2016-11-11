@@ -1,5 +1,5 @@
 body {
-  background-color: pink;
+  background-color: #CC463A;
 }
 
 .pokeContainer {
@@ -10,4 +10,42 @@ body {
 .pokemon {
   text-align: center;
   margin: 10px;
+  background-color: white;
+  border-radius: 5px;
+  padding: 3px;
+}
+
+.poison {
+  color: #A040A0;
+  font-weight: bold;
+}
+
+.grass {
+  color: #73BD64;
+  font-weight: bold;
+}
+
+.fire {
+  color: #E72300;
+  font-weight: bold;
+}
+
+.bug {
+  color: #4C963D;
+  font-weight: bold;
+}
+
+.flying {
+  color: #B49DF7;
+  font-weight: bold;
+}
+
+.water {
+  color: #80C6DD;
+  font-weight: bold;
+}
+
+.normal {
+  color: #B8B8B8;
+  font-weight: bold;
 }
