@@ -2,11 +2,16 @@ console.log(seeds.length);
 
 Vue.component("pokemon", {
   props: ['pokemon'], //  data is passing down to child components using props
-  template: '<div class="pokemon">Gotta Catch em all, Pokemon {{pokemon}}</div>',
+  template: '<div class="pokemon">{{pokemon.name}}</div>',
 })
 
 const Index = {
-  template: '<div class="pokemonIndex"><pokemon v-for="poke in pokemon"></pokemon></div>',
+  // template: '<div class="pokemonIndex">HEY HELLO</pokemon></div>',
+  template: '<div class="pokemonIndex"><h2>CHECK THESE POKES</h2><pokemon v-for="poke in pokemon" :pokemon="poke" :key="poke.id"></pokemon></div>',
+  data: function(){
+    return {pokemon: seeds}
+  }
+
 }
 
 const Show = {
@@ -24,7 +29,4 @@ const router = new VueRouter({
 
 const app = new Vue({
   router: router,
-  data: {
-    pokemon: seeds
-  }
 }).$mount("#rapidex")
