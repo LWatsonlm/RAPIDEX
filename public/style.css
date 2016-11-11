@@ -1,5 +1,14 @@
+h1, h2 {
+  color: white;
+}
+
 body {
   background-color: #CC463A;
+}
+
+h3 {
+  margin-top: 0px;
+  margin-bottom: 3px;
 }
 
 .pokeContainer {

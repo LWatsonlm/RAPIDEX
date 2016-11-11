@@ -6,7 +6,7 @@ Vue.component("pokemon", {
 
   // define your html here. Vue doesn't want you to link to external files, unless you're using build tools
   template: `<div class="pokemon">
-              <img :src="pokemon.sprites.front_default"
+              <img :src="pokemon.sprites.front_default">
               <h3>{{pokemon.name}}</h3>
               <div class="poketypes">
                 <span :class="type.type.name" v-for="type in pokemon.types">{{type.type.name}} </span>
