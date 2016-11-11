@@ -1,0 +1,13 @@
+body {
+  background-color: pink;
+}
+
+.pokeContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pokemon {
+  text-align: center;
+  margin: 10px;
+}

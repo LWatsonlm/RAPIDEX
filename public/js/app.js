@@ -4,14 +4,18 @@ Vue.component("pokemon", {
   template: `<div class="pokemon">
               <img :src="pokemon.sprites.front_default">
               <h3>{{pokemon.name}}</h3>
-
+              <div class="poketypes">
+                <span :class="type.type.name" v-for="type in pokemon.types">{{type.type.name}} </span>
+              </div>
             </div>`,
 })
 
 const Index = {
   template: `<div class="pokemonIndex">
                 <h2>CHECK THESE POKéS</h2>
-                <pokemon v-for="poke in orderedPokemon" :pokemon="poke" :key="poke.id"></pokemon>
+                <div class="pokeContainer">
+                  <pokemon v-for="poke in orderedPokemon" :pokemon="poke" :key="poke.id"></pokemon>
+                </div>
               </div>`,
 
   data: function(){
