@@ -1,9 +1,16 @@
+console.log(seeds.length);
+
+Vue.component("pokemon", {
+  props: ['pokemon'], //  data is passing down to child components using props
+  template: '<div class="pokemon">Gotta Catch em all, Pokemon {{pokemon}}</div>',
+})
+
 const Index = {
-  template: "<h2>INDEX</h2>",
+  template: '<div class="pokemonIndex"><pokemon v-for="poke in pokemon"></pokemon></div>',
 }
 
 const Show = {
-  template: "<div class='show'> <h2>SHOW</h2> <p>{{$route.params.id}}</p></div>",
+  template: "<div class='show'> <h2>SHOW</h2> <pokemon pokemon='bulbasuar'></pokemon> <p>{{$route.params.id}}</p></div>",
 }
 
 const routes = [
@@ -16,5 +23,8 @@ const router = new VueRouter({
 })
 
 const app = new Vue({
-  router
+  router: router,
+  data: {
+    pokemon: seeds
+  }
 }).$mount("#rapidex")
