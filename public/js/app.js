@@ -1,51 +1,20 @@
-angular
-  .module("rapidex", [
-    "ui.router",
-    "ngResource"
-  ])
-  .config([
-    "$stateProvider",
-    RouterFunction
-  ])
-  .factory("PokemonFactory", [
-    "$resource",
-    PokemonFactoryFunction
-  ])
-  .controller("PokeIndexController", [
-    "PokemonFactory",
-    PokeIndexControllerFunction
-  ])
-  .controller("PokeShowController", [
-    "$stateParams",
-    "PokemonFactory",
-    PokeShowControllerFunction
-  ])
+const Index = {
+  template: "<h2>INDEX</h2>",
+}
 
+const Show = {
+  template: "<div class='show'> <h2>SHOW</h2> <p>{{$route.params.id}}</p></div>",
+}
 
-  function RouterFunction($stateProvider) {
-    $stateProvider
-    .state("pokeIndex", {
-      url: "/",
-      templateUrl: "/assets/js/ng-views/index.html",
-      controller: "PokeIndexController",
-      controllerAs: "vm"
-    })
-    .state("pokeShow", {
-      url: "/pokemon/:id",
-      templateUrl: "/assets/js/ng-views/show.html",
-      controller: "PokeShowController",
-      controllerAs: "vm"
-    })
-  }
+const routes = [
+  { path: '/', component: Index},
+  { path: '/pokemon/:id', component: Show}
+]
 
-  function PokemonFactoryFunction($resource) {
-    return $resource("http://localhost:3001/api/pokemon/:id")
-  }
+const router = new VueRouter({
+  routes //short for routes: routes
+})
 
-  function PokeIndexControllerFunction(PokemonFactory) {
-    this.pokemon = PokemonFactory.query()
-  }
-
-  function PokeShowControllerFunction($stateParams, PokemonFactory) {
-    this.pokemon = PokemonFactory.get({id: $stateParams.id})
-  }
+const app = new Vue({
+  router
+}).$mount("#rapidex")
