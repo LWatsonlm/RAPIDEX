@@ -7,9 +7,22 @@ Vue.component("pokemon", {
 
 const Index = {
   // template: '<div class="pokemonIndex">HEY HELLO</pokemon></div>',
-  template: '<div class="pokemonIndex"><h2>CHECK THESE POKES</h2><pokemon v-for="poke in pokemon" :pokemon="poke" :key="poke.id"></pokemon></div>',
+  template: '<div class="pokemonIndex"><h2>CHECK THESE POKéS</h2><pokemon v-for="poke in orderedPokemon" :pokemon="poke" :key="poke.id"></pokemon></div>',
   data: function(){
     return {pokemon: seeds}
+  },
+  computed: {
+    orderedPokemon: function() {
+      return this.pokemon.sort((a, b) => {
+        if (a.id > b.id) {
+          return 1
+        }
+        if (a.id < b.id) {
+          return -1
+        }
+        return 0
+      })
+    }
   }
 
 }
