@@ -1,3 +1,3 @@
 # RAPIDEX
-Built in React.js
+Built MEAN
 ...more coming soon
